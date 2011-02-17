@@ -1,7 +1,7 @@
 
 <html>
 <Title>The Stack</title>
-<body>
+<body bgcolor=black>
 <center>
 <?php
 	include('header.html');
@@ -10,6 +10,6 @@
 </tr>
 </table>
 </center>
-<hr>
+
 </body>
 </html>
