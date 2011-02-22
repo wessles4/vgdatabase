@@ -1,5 +1,5 @@
 <html>
-<title> The Stack - Register<\title>
+<title>The Stack - Register</title>
 <body bgcolor=black>
 <?PHP
 	include("header.html");
