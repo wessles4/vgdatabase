@@ -41,8 +41,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `password`,`email`, `username`, `gender`) VALUES
-(1,'password','admin@admin.com','admin', 'M');
+INSERT INTO `users` (`user_id`,`email`, `username`, `gender`, `password`) VALUES
+(1,'admin@admin.com','admin', 'M', 'password');
 
 -- --------------------------------------------------------
 
@@ -107,9 +107,6 @@ INSERT INTO `videogames` (`game_id`, `name`, `platform`, `genre`, `developer`, `
 (36, 'Team Fortress 2', 'PC', 'FPS', 'Valve', 'M', 0, 1, '8.9', '0.0'),
 (37, 'Dead Space 2', 'PS3', 'Horror', 'Visceral Games', 'M', 1, 1, '9.0', '0.0'),
 (38, 'Dead Space 2', 'XBOX', 'Horror', 'Visceral Games', 'M', 1, 1, '9.0', '0.0'),
-(39, 'Mafia II', 'XBOX', 'Open World', '2K Games', 'M', 1, 0, '7.0', '0.0');
+(39, 'Mafia II', 'XBOX', 'Open World', '2K Games', 'M', 1, 0, '7.0', '0.0'),
 (40, 'Mafia II', 'PS3', 'Open World', '2K Games', 'M', 1, 0, '7.0', '0.0');
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
