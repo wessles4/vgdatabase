@@ -15,8 +15,13 @@ if ($row = mysqli_fetch_array($result)){
   
   include "home.php";
 }else{
+<<<<<<< HEAD
     include "login.php";
 echo "<p><font color = white>Incorrect username or password</font></p>\n";
+=======
+   	include "login.php";
+	echo "<p><font color = white>Incorrect username or password</font></p>\n";
+>>>>>>> origin/master
 }
 
 ?>
