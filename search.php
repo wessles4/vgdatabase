@@ -3,6 +3,12 @@ session_start();
 ?>
 
 <html>
+<head>
+<style type="text/css">
+th {text-align: left;}
+th {border-bottom: 1px solid black;}
+
+</style>
 <Title>Search Results</title>
 <body bgcolor=black>
 <center>
@@ -28,7 +34,8 @@ session_start();
 
 					$result = mysqli_query($db, $query)
 						or die("Error Querying Database");
-					echo "<table id=\"hor-minimalist-b\">\n<tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th><tr>\n\n";
+					echo "<table id=\"hor-minimalist-b\">\n<tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th></tr>\n\n";
+					echo "";
 					while($row = mysqli_fetch_array($result)) 
 					{
 						$name = $row['name'];
@@ -39,7 +46,7 @@ session_start();
 						$ign_score = $row['ign_score'];
 						
 
-						echo "<tr><td  >$name</td><td >$developer</td><td >$platform</td><td>$genre</td><td>$rating</td><td>$ign_score</td></tr>\n";
+						echo "<tr><td width = 1000>$name</td><td width = 1000>$developer</td><td width = 800>$platform</td><td width = 500>$genre</td><td width = 500>$rating</td><td width = 500>$ign_score</td></tr>\n";
 					}
 						echo "</table>\n"; 
 				}
