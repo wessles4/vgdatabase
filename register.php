@@ -14,7 +14,12 @@
 	<form method="post" action="registerController.php">
 		Username: <input type="text" name="user" id="user"/><br>
 		Password: <input type="password" name="pass" id="pass"/><br>
-		Confirm Password: <input tyep="password" name="pass2" id="pass2"/><br>
+		Confirm Password: <input type="password" name="pass2" id="pass2"/><br>
+		E-mail: <input type="text" name="email" id="email"/><br>
+		Gender: <select name="gender">
+		<option value="M">M</option>
+		<option value="F">F</option>
+		</select><br>
 		<input type="submit" value="submit">
 	</form>
 	</td></tr>
