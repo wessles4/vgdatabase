@@ -1,10 +1,11 @@
+<?php
+session_start();
+?>
+
 <html>
 <Title>Search Results</title>
 <body bgcolor=black>
 <center>
-<?php
-	include('header.html');
-?>
 <br>
 <br>
 <center>
