@@ -1,6 +1,4 @@
-<?PHP
-session_start();
-?>
+
 <table frame=below width=100% style="background-color:red">
 <tr align=center>
 <td colspan=100%>
