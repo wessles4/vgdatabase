@@ -7,7 +7,7 @@ session_start();
 <body bgcolor=black>
 <center>
 <?php
-	include('header.html');
+	include('header.php');
 ?>
 </td>
 </tr>
