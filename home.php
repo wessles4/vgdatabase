@@ -20,7 +20,7 @@ echo "<p><font color=white>Welcome $name!</font></p>";
 echo "<p><font color=white>Welcome Guest!<font></p>";
 }
 echo "<p><font color=white>Search for games based on title, platform, genre or ERSB rating.</font></p>";
-//include('search.php');
+include('search.php');
 
 ?>
 <table width=50% bgcolor=white border="5" bordercolorlight=red bordercolordark="dark red">
