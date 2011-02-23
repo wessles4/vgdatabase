@@ -2,7 +2,7 @@
 <title>The Stack - Login</title>
 <body bgcolor=black>
 <?PHP
-	include("header.html");
+	include("header.php");
 ?>
 <br>
 <br>
