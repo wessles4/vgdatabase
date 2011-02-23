@@ -6,6 +6,9 @@ session_start();
 <Title>Search Results</title>
 <body bgcolor=black>
 <center>
+<?PHP
+	include('header.php');
+?>
 <br>
 <br>
 <center>
