@@ -9,7 +9,7 @@ th {text-align: left;}
 th {border-bottom: 1px solid black;}
 
 </style>
-<Title>Search Results</title>
+<Title>The Stack - Browse Games</title>
 <body bgcolor=black>
 <center>
 <?PHP
@@ -21,7 +21,7 @@ th {border-bottom: 1px solid black;}
 <table width=75% bgcolor=white border="5" bordercolorlight=red bordercolordark="dark red">
 	<tr>
 	<td>
-	<h1 align=left>Search Results:</h1>
+	<h1 align=left>ALL GAMES:</h1>
 	<form method="post">
 		<?php
 			include "db_connect.php";
