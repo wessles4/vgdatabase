@@ -11,7 +11,6 @@ th {border-bottom: 1px solid black;}
 </style>
 <Title>Search Results</title>
 <body bgcolor=black>
-<center>
 <?PHP
 	include('header.php');
 ?>
