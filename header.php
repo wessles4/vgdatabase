@@ -9,7 +9,7 @@
 <div id="header">
 	<div id="menu">
 		<ul>
-			<li><a href="home.php">Homepage</a></li>
+			<li><a href="home.php">HOME</a></li>
 			<li><a href="games.php">GAMES</a></li>
 <?PHP
 	if ($_SESSION['username'] != NULL){
@@ -30,6 +30,5 @@
 </div>
 <div id="logo">
 	<h1><a href="home.php">The Stack </a></h1>
-	<p><em> template design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></em></p>
 </div>
 </body>

@@ -23,14 +23,14 @@ echo "<h1>Welcome $name!</h1>";
 }else{
 echo "<h1>Welcome Guest!</h1>";
 }
-echo "<p><font size=3 color=grey>Search for games based on title, platform, genre or ERSB rating.</font></p>";
 ?>
-							<h2 align=left>Search</h2>
+							
 							<form method="post" action="search.php">
-							<p><font color=grey size=3>Query our database for videogame information. Search by game name.</p>
-							<br>
-							Search:</font><input style="font-size:default"  type="text" name="search" id="search" size=78%/><br><br>
-							<input type="submit" value="go" name="submit" />
+							<font color=grey size=3>Query our database for videogame information. Search by game name. </br></br>
+							Search: 
+							<input type="text" name="search" id="search input" /> 
+							<input type="submit" value="Go" name="submit" />  
+							</font> 
 							</form>
 							</div>
 						</div>
