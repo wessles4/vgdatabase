@@ -33,7 +33,7 @@ th {border-bottom: 1px solid black;}
 
 								$result = mysqli_query($db, $query)
 									or die("Error Querying Database");
-								echo "<table id=\"hor-minimalist-b\">\n<tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th></tr>\n\n";
+								echo "<table id=\"hor-minimalist-b\">\n<tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th><th>Favorite</th></tr>\n\n";
 								echo "";
 								while($row = mysqli_fetch_array($result)) 
 								{
@@ -43,7 +43,7 @@ th {border-bottom: 1px solid black;}
 									$genre = $row['genre'];
 									$rating = $row['rating'];
 									$ign_score = $row['ign_score'];						
-									echo "<tr><td width = 1000>$name</td><td width = 1000>$developer</td><td width = 800>$platform</td><td width = 500>$genre</td><td width = 500>$rating</td><td width = 500>$ign_score</td></tr>\n";
+									echo "<tr><td width = 1000>$name</td><td width = 1000>$developer</td><td width = 800>$platform</td><td width = 500>$genre</td><td width = 500>$rating</td><td width = 500>$ign_score</td><td width = 500><img src='starempty.png'></td></tr>\n";
 								}
 								echo "</table>\n"; 
 							?>
