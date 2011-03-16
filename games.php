@@ -28,28 +28,34 @@ th {border-bottom: 1px solid black;}
 							<?php
 								include "db_connect.php";
 								$username= $_SESSION['username'];
-
+								$getID= "SELECT user_id FROM users WHERE username='$username'";
+								$idresult=mysqli_query($db, $getID);
+								$idrow=mysqli_fetch_array($idresult);
+								$userid= $idrow['user_id'];
 								$searchterm = mysqli_real_escape_string($db, $_POST['search']);
 				 				$query = "SELECT * FROM videogames ORDER BY name";
 								if ($_SESSION['username'] != NULL){
-								$query2= "SELECT name FROM videogames INNER JOIN users INNER JOIN favorites ON videogames.game_id=favorites.game_id AND users.user_id=favorites.user_id WHERE users.username = '$username'";
+								//$query2= "SELECT game_id FROM favorites WHERE user_id = '$userid'";
 								//$query = "SELECT * FROM videogames where zip = '$userzip' AND (name LIKE '%$searchterm%' OR type LIKE '%$searchterm') ORDER BY name";
 								
 								$result = mysqli_query($db, $query)
 									or die("Error Querying Database");
-								$result2 = mysqli_query($db, $query2)
-									or die("Error Querying Database");
+								//$result2 = mysqli_query($db, $query2)
+									//or die("Error Querying Database");
 								echo "<table id=\"hor-minimalist-b\">\n<tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th><th>Favorite</th></tr>\n\n";
 								echo "";
+								
 								while($row = mysqli_fetch_array($result)) 
 								{
+									
 									$name = $row['name'];
+									$gameid=$row['game_id'];
+									$query2= "SELECT game_id FROM favorites WHERE user_id = '$userid' AND game_id='$gameid'";
+									$result2 = mysqli_query($db, $query2)
+									or die("Error Querying Database");
 									$favorite= false;
-									while($row2= mysqli_fetch_array($result2)){
-										$name2= $row2['name'];
-										if($name == $name2){
-											$favorite=true;
-										}
+									if($row2=mysqli_fetch_array($result2)!= NULL){
+										$favorite= true;
 									}
 									$developer = $row['developer'];
 									$platform = $row['platform'];
@@ -58,10 +64,10 @@ th {border-bottom: 1px solid black;}
 									$ign_score = $row['ign_score'];
 									if($favorite == true){
 										echo "<tr><td width = 1000>$name</td><td width = 1000>$developer</td><td width = 800>$platform</td><td width = 500>$genre</td>
-											<td width = 500>$rating</td><td width = 500>$ign_score</td><td width = 500><a href='favorite.php?game=$name'><img src='star.png'></a></td></tr>\n";
+											<td width = 500>$rating</td><td width = 500>$ign_score</td><td width = 500><a href='favorite.php?game=$gameid'><img src='star.png'></a></td></tr>\n";
 									}else{
 										echo "<tr><td width = 1000>$name</td><td width = 1000>$developer</td><td width = 800>$platform</td><td width = 500>$genre</td>
-											<td width = 500>$rating</td><td width = 500>$ign_score</td><td width = 500><a href='favorite.php?game=$name'><input type='hidden' name='game' value='$name'><img src='starempty.png'></a></td></tr>\n";
+											<td width = 500>$rating</td><td width = 500>$ign_score</td><td width = 500><a href='favorite.php?game=$gameid'><img src='starempty.png'></a></td></tr>\n";
 									}
 								}
 								echo "</table>\n"; 
