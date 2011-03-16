@@ -22,8 +22,11 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 CREATE TABLE IF NOT EXISTS `favorites` (
   `game_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `game_name` VARCHAR(40) DEFAULT NULL,
   PRIMARY KEY (`game_id`,`user_id`),
-  KEY `user_id` (`user_id`)
+  CONSTRAINT `game_id_user_id_fk`
+  FOREIGN KEY (game_id) REFERENCES videogames (game_id),
+  FOREIGN KEY (user_id) REFERENCES users (user_id)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
