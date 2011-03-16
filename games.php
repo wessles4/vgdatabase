@@ -58,10 +58,10 @@ th {border-bottom: 1px solid black;}
 									$ign_score = $row['ign_score'];
 									if($favorite == true){
 										echo "<tr><td width = 1000>$name</td><td width = 1000>$developer</td><td width = 800>$platform</td><td width = 500>$genre</td>
-											<td width = 500>$rating</td><td width = 500>$ign_score</td><td width = 500><a href='favorite.php'><img src='star.png'></a></td></tr>\n";
+											<td width = 500>$rating</td><td width = 500>$ign_score</td><td width = 500><a href='favorite.php?game=$name'><img src='star.png'></a></td></tr>\n";
 									}else{
 										echo "<tr><td width = 1000>$name</td><td width = 1000>$developer</td><td width = 800>$platform</td><td width = 500>$genre</td>
-											<td width = 500>$rating</td><td width = 500>$ign_score</td><td width = 500><a href='favorite.php'><img src='starempty.png'></a></td></tr>\n";
+											<td width = 500>$rating</td><td width = 500>$ign_score</td><td width = 500><a href='favorite.php?game=$name'><input type='hidden' name='game' value='$name'><img src='starempty.png'></a></td></tr>\n";
 									}
 								}
 								echo "</table>\n"; 
