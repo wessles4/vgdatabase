@@ -3,24 +3,33 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 22, 2011 at 10:30 AM
+-- Generation Time: Mar 16, 2011 at 03:01 PM
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
 --
 -- Database: `games`
 --
-CREATE DATABASE IF NOT EXISTS `games` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-GRANT ALL PRIVILEGES ON games.* to 'admin'@'localhost' identified by 'user';
-USE `games`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `favorites`
+--
+
+CREATE TABLE IF NOT EXISTS `favorites` (
+  `game_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`game_id`,`user_id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `favorites`
+--
+
 
 -- --------------------------------------------------------
 
@@ -35,14 +44,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `gender` char(1) DEFAULT NULL,
   `password` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`,`email`, `username`, `gender`, `password`) VALUES
-(1,'admin@admin.com','admin', 'M', 'password');
+INSERT INTO `users` (`user_id`, `email`, `username`, `gender`, `password`) VALUES
+(1, 'admin@admin.com', 'admin', 'M', 'password'),
+(2, 'wessles4@gmail.com', 'wesley.frank', 'M', 'scout');
 
 -- --------------------------------------------------------
 
@@ -62,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `videogames` (
   `ign_score` decimal(2,1) DEFAULT NULL,
   `user_rating` decimal(2,1) DEFAULT NULL,
   PRIMARY KEY (`game_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
 -- Dumping data for table `videogames`
@@ -81,8 +91,8 @@ INSERT INTO `videogames` (`game_id`, `name`, `platform`, `genre`, `developer`, `
 (10, 'FIFA 11', 'PC', 'Sports', 'Electronic Arts', 'E', 1, 1, '8.0', '0.0'),
 (11, 'FIFA 11', 'XBOX', 'Sports', 'Electronic Arts', 'E', 1, 1, '8.5', '0.0'),
 (12, 'FIFA 11', 'WII', 'Sports', 'Electronic Arts', 'E', 1, 1, '6.0', '0.0'),
-(13, 'Grand Theft Auto IV', 'PS3', 'Open World', 'Rockstar', 'M', 1, 1, '10', '0.0'),
-(14, 'Grand Theft Auto IV', 'XBOX', 'Open World', 'Rockstar', 'M', 1, 1, '10', '0.0'),
+(13, 'Grand Theft Auto IV', 'PS3', 'Open World', 'Rockstar', 'M', 1, 1, '9.9', '0.0'),
+(14, 'Grand Theft Auto IV', 'XBOX', 'Open World', 'Rockstar', 'M', 1, 1, '9.9', '0.0'),
 (15, 'Grand Theft Auto IV', 'PC', 'Open World', 'Rockstar', 'M', 1, 1, '9.2', '0.0'),
 (16, 'Madden NFL 11', 'WII', 'Sports', 'Electronic Arts', 'E', 1, 1, '7.5', '0.0'),
 (17, 'Madden NFL 11', 'PS3', 'Sports', 'Electronic Arts', 'E', 1, 1, '8.0', '0.0'),
@@ -109,4 +119,3 @@ INSERT INTO `videogames` (`game_id`, `name`, `platform`, `genre`, `developer`, `
 (38, 'Dead Space 2', 'XBOX', 'Horror', 'Visceral Games', 'M', 1, 1, '9.0', '0.0'),
 (39, 'Mafia II', 'XBOX', 'Open World', '2K Games', 'M', 1, 0, '7.0', '0.0'),
 (40, 'Mafia II', 'PS3', 'Open World', '2K Games', 'M', 1, 0, '7.0', '0.0');
-
