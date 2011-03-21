@@ -35,13 +35,9 @@ th {border-bottom: 1px solid black;}
 								$searchterm = mysqli_real_escape_string($db, $_POST['search']);
 				 				$query = "SELECT * FROM videogames ORDER BY name";
 								if ($_SESSION['username'] != NULL){
-								//$query2= "SELECT game_id FROM favorites WHERE user_id = '$userid'";
-								//$query = "SELECT * FROM videogames where zip = '$userzip' AND (name LIKE '%$searchterm%' OR type LIKE '%$searchterm') ORDER BY name";
 								
 								$result = mysqli_query($db, $query)
 									or die("Error Querying Database");
-								//$result2 = mysqli_query($db, $query2)
-									//or die("Error Querying Database");
 								echo "<table id=\"hor-minimalist-b\">\n<tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th><th>Favorite</th></tr>\n\n";
 								echo "";
 								
