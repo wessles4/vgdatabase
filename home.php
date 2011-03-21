@@ -60,6 +60,33 @@ echo "<p><font size=3 color=grey>Search for games based on title, platform, genr
 						<h2>LATEST GAMES</h2>
 						<ul>
 						<!--- INCLUDE A PHP FILE THAT BRINGS UP THE 10 LATEST GAMES ON THE LIST --->
+						<?PHP
+							include "db_connect.php";
+							$query= "SELECT name, platform FROM videogames ORDER BY game_id DESC LIMIT 5";
+							$result=mysqli_query($db, $query);
+							while($row = mysqli_fetch_array($result)){
+								$title= $row['name'];
+								$platform=$row['platform'];
+								echo "<li>$title ($platform) </li>";
+							}
+						?>
+						
+						</ul>
+					</li>
+					<li>
+						<h2>TOP RATED GAMES</h2>
+						<ul>
+						<?PHP
+							$query2="SELECT name, platform, ign_score FROM videogames ORDER BY ign_score DESC LIMIT 5";
+							$result2= mysqli_query($db, $query2);
+							while($row2 = mysqli_fetch_array($result2)){
+								$title= $row2['name'];
+								$platform=$row2['platform'];
+								$ign=$row2['ign_score'];
+								echo "<li>$title ($platform) <b>$ign</b> </li>";
+							}
+						?>
+						
 						</ul>
 					</li>
 				</ul>
