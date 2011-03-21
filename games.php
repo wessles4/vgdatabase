@@ -74,7 +74,7 @@ th {border-bottom: 1px solid black;}
 								}else{
 									$result = mysqli_query($db, $query)
 									or die("Error Querying Database");
-									echo "<table id=\"hor-minimalist-b\">\n<tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th><th>Favorite</th></tr>\n\n";
+									echo "<table id=\"hor-minimalist-b\">\n<tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th></tr>\n\n";
 									echo "";
 									while($row = mysqli_fetch_array($result)) 
 									{

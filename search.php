@@ -29,7 +29,6 @@ th {border-bottom: 1px solid black;}
 									if (isset($_POST['search']))
 									{
 										$searchterm = mysqli_real_escape_string($db, $_POST['search']);
-				 
 										$query = "SELECT * FROM videogames WHERE (name LIKE '%$searchterm%') ORDER BY name";
 										//$query = "SELECT * FROM videogames where zip = '$userzip' AND (name LIKE '%$searchterm%' OR type LIKE '%$searchterm') ORDER BY name";
 
