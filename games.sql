@@ -13,6 +13,9 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Database: `games`
 --
 
+CREATE DATABASE IF NOT EXISTS games;
+GRANT ALL PRIVILEGES ON games.* to 'admin'@'localhost' identified by 'user';
+USE games;
 -- --------------------------------------------------------
 
 --
