@@ -27,10 +27,20 @@ echo "<p><font size=3 color=grey>Search for games based on title, platform, genr
 ?>
 							<h2 align=left>Search</h2>
 							<form method="post" action="search.php">
-							<p><font color=grey size=3>Query our database for videogame information. Search by game name.</p>
+							<p><font color=grey size=3>Query our database for videogame information.</p>
 							<br>
-							Search:</font><input style="font-size:default"  type="text" name="search" id="search" size=78%/><br><br>
-							<input type="submit" value="go" name="submit" />
+							Search By:</font>
+							<select name="type">
+							<option value="name">Title</option>
+							<option value="platform">Platform</option>
+							<option value="genre">Genre</option>
+							<option value="developer">Developer</option>
+							<option value="rating">Rating</option>
+							</SELECT>
+							<br>
+							
+							<input style="font-size:default"  type="text" name="search" id="search" size=78%/><br><br>
+							<input type="submit" value="Submit Search" name="submit" />
 							</form>
 							</div>
 						</div>
