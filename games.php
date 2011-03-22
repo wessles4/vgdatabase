@@ -46,7 +46,7 @@ th {border-bottom: 1px solid black;}
 									
 									$name = $row['name'];
 									$gameid=$row['game_id'];
-									$query2= "SELECT game_id FROM favorites WHERE user_id = '$userid' AND game_id='$gameid'";
+									$query2= "SELECT game_id FROM favorites INNER JOIN users ON users.user_id=favorites.user_id WHERE users.username = '$username' AND favorites.game_id='$gameid'";
 									$result2 = mysqli_query($db, $query2)
 									or die("Error Querying Database");
 									$favorite= false;
