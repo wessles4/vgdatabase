@@ -28,11 +28,6 @@ th {border-bottom: 1px solid black;}
 							<?php
 								include "db_connect.php";
 								$username= $_SESSION['username'];
-								$getID= "SELECT user_id FROM users WHERE username='$username'";
-								$idresult=mysqli_query($db, $getID);
-								$idrow=mysqli_fetch_array($idresult);
-								$userid= $idrow['user_id'];
-								$searchterm = mysqli_real_escape_string($db, $_POST['search']);
 				 				$query = "SELECT * FROM videogames ORDER BY name";
 								if ($_SESSION['username'] != NULL){
 								
