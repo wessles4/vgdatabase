@@ -28,11 +28,6 @@ th {border-bottom: 1px solid black;}
 							<?php
 								include "db_connect.php";
 								$username= $_SESSION['username'];
-								$getID= "SELECT user_id FROM users WHERE username='$username'";
-								$idresult=mysqli_query($db, $getID);
-								$idrow=mysqli_fetch_array($idresult);
-								$userid= $idrow['user_id'];
-								$searchterm = mysqli_real_escape_string($db, $_POST['search']);
 				 				$query = "SELECT * FROM videogames ORDER BY name";
 								if ($_SESSION['username'] != NULL){
 								
@@ -46,7 +41,7 @@ th {border-bottom: 1px solid black;}
 									
 									$name = $row['name'];
 									$gameid=$row['game_id'];
-									$query2= "SELECT game_id FROM favorites WHERE user_id = '$userid' AND game_id='$gameid'";
+									$query2= "SELECT game_id FROM favorites INNER JOIN users ON users.user_id=favorites.user_id WHERE users.username = '$username' AND favorites.game_id='$gameid'";
 									$result2 = mysqli_query($db, $query2)
 									or die("Error Querying Database");
 									$favorite= false;

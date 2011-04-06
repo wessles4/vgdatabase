@@ -15,6 +15,7 @@
 	if ($_SESSION['username'] != NULL){
 ?>
 			<li><a href="mygames.php">MY GAMES</a></li>
+			<li><a href="addGame.php">ADD GAME</a></li>
 			<li><a href="logout.php">LOGOUT</a></li>
 <?PHP
 }else{
