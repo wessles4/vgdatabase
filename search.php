@@ -36,6 +36,7 @@ th {border-bottom: 1px solid black;}
 										//$query = "SELECT * FROM videogames where zip = '$userzip' AND (name LIKE '%$searchterm%' OR type LIKE '%$searchterm') ORDER BY name";
 										$result = mysqli_query($db, $query)
 										or die("Error Querying Database");
+										
 										if ($_SESSION['username'] != NULL){
 										echo "<table id=\"hor-minimalist-b\">\n<tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th><th>Favorite</th></tr>\n\n";
 										echo "";
@@ -46,6 +47,7 @@ th {border-bottom: 1px solid black;}
 											$query2= "SELECT game_id FROM favorites INNER JOIN users ON users.user_id=favorites.user_id WHERE users.username = '$username' AND favorites.game_id='$gameid'";
 											$result2 = mysqli_query($db, $query2)
 												or die("Error Querying Database");
+											
 											$favorite= false;
 											if($row2=mysqli_fetch_array($result2)!= NULL){
 												$favorite= true;

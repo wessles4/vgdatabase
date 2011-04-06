@@ -31,7 +31,7 @@ echo "<p><font size=3 color=grey>Search for games based on title, platform, genr
 							<p><font color=grey size=3>Query our database for videogame information. Search by game name.</p>
 							<br>
 							Search:<br></font><input style="font-size:default"  type="text" name="search" id="search" size=78%/>
-							<input type="submit" value="Go" name="submit" />
+							<input type="submit" value="Go" name="submit" /><br><br>
 							Search By:</font>
 							<select name="type">
 							<option value="name">Title</option>
