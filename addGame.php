@@ -48,8 +48,8 @@ session_start();
 								<option value="Platform">Platform</option>
 								<option value="Horror">Horror</option>
 								</select><br>
-								Single Player:<input type="checkbox" name="singleplayer" value="true"><br>
-								Multi-Player:<input type="checkbox" name="multiplayer" value="true"><br>
+								Single Player:<input type="checkbox" name="singleplayer" value="1"><br>
+								Multi-Player:<input type="checkbox" name="multiplayer" value="1"><br>
 								IGN Score:<input type="text" name="ignscore" id="ignscore"/><br>
 								Your Score:<input type="text" name="userscore" id="userscore"/><br>
 								<input type="submit" value=submit>

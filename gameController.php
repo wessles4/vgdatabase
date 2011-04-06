@@ -10,6 +10,7 @@ $newgenre= $_POST['genre'];
 $newsingle= $_POST['singleplayer'];
 $newmulti= $_POST['multiplayer'];
 $newign= $_POST['ignscore'];
+$newscore= $_POST['userscore'];
 
 $query = "SELECT name FROM videogames WHERE name LIKE '$newgame'";
 $result = mysqli_query($db, $query);
@@ -19,12 +20,17 @@ if($newgame!= $row['name'] && $newplatform != $row['platform']){
 		if($newplatform != null){
 			if($newrating != null){
 				if($newgenre != null){
-					if($newsingle !=null || $newmulti != null){
+					if($newsingle == 1 || $newmulti == 1){
 						if ($newign != null){
-							$add="INSERT INTO videogames (name,platform, genre, developer,rating,single_player,multi_player,ign_score) 
-							values ('$newgame','$newplatform', '$newgenre','$newdeveloper','$newrating','$newsingle','$newmulti','$newign')";
-							$result2=mysqli_query($db, $add);
-							include "games.php";
+							if($newscore != null && $newscore > 0 && $userscore <10){
+								$add="INSERT INTO videogames (name,platform, genre, developer,rating,single_player,multi_player,ign_score,user_rating) 
+								values ('$newgame','$newplatform', '$newgenre','$newdeveloper','$newrating','$newsingle','$newmulti','$newign','$newscore')";
+								$result2=mysqli_query($db, $add);
+								include "games.php";
+							}else{
+								include "addGame.php";
+								echo "<center><font color='red'>Please include your rating for this game</font></center>";
+							}
 						}else{
 							include "addGame.php";
 							echo "<center><font color='red'>Please include an IGN score</font></center>";
