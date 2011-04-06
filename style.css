@@ -1,4 +1,4 @@
-
+﻿
 /*
 Design by Free CSS Templates
 http://www.freecsstemplates.org
@@ -147,12 +147,12 @@ hr {
 /* Search */
 
 #search {
-	float: right;
+	float: left;
 	padding: 10px 10px 0px 0px;
 }
 
 #search form {
-	float: right;
+	float: left;
 	margin: 0;
 	padding: 4px 0px 0 0;
 }
@@ -175,6 +175,7 @@ hr {
 	border: none;
 	background: url(images/img02.jpg) no-repeat left top;
 	color: #000000;
+	
 }
 
 #search-submit {
