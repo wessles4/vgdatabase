@@ -49,17 +49,7 @@ echo "<p><font size=3 color=grey>Search for games based on title, platform, genr
 				<?PHP
 				if($_SESSION['username'] != NULL){
 				?>
-				<div class="post">
-					<div class="post-bgtop">
-						<div class="post-bgbtm">
-							<div class="entry">
-							<h2>GAMES YOU MIGHT LIKE</h2>
-							<!-- include a php that recomends 3 games for the user -->
-							YAY FILLING IN SPACE!!!
-							</div>
-						</div>
-					</div>
-				</div>
+				
 				<?PHP
 				}
 				?>
