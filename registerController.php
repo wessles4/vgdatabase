@@ -16,6 +16,13 @@ $result = mysqli_query($db, $query);
 if ($row = mysqli_fetch_array($result)){
     include ('register.php');
 	echo "<p><font color = white>Username already taken</font></p>\n";
+}
+
+$query = "SELECT * FROM users WHERE email = '$email'";
+$result = mysqli_query($db, $query);
+if ($row = mysqli_fetch_array($result)){
+    include ('register.php');
+	echo "<p><font color = white>Email address already used for another account.</font></p>\n";
 
 }else{
 	session_start();
