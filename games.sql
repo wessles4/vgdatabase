@@ -77,7 +77,8 @@ CREATE TABLE IF NOT EXISTS `videogames` (
   `multi_player` tinyint(1) DEFAULT NULL,
   `ign_score` decimal(2,1) DEFAULT NULL,
   `user_rating` decimal(2,1) DEFAULT NULL,
-  PRIMARY KEY (`game_id`)
+  PRIMARY KEY (`game_id`),
+  INDEX(game_id)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --

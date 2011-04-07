@@ -9,11 +9,15 @@ th {text-align: left;}
 th {border-bottom: 1px solid black;}
 
 </style>
+</head>
 <Title>Search Results</title>
+
 <body bgcolor=black>
 <?PHP
 	include('header.php');
+	
 ?>
+
 <div id="page">
 	<div id="page-bgtop">
 		<div id="page-bgbtm">
@@ -38,8 +42,21 @@ th {border-bottom: 1px solid black;}
 										or die("Error Querying Database");
 										
 										if ($_SESSION['username'] != NULL){
-										echo "<table id=\"hor-minimalist-b\">\n<tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th><th>Favorite</th></tr>\n\n";
-										echo "";
+										?><table id="hor-minimalist-b" class="tablesorter">
+											<thead>
+											<tr>
+											<th>Game Name</th>
+											<th>Developer</th>
+											<th>Platform</th>
+											<th>Genre</th>
+											<th>Rating</th>
+											<th>IGN Score</th>
+											<th>Favorite</th>
+											</tr>
+											</thead>
+											<tbody>
+										<?php
+										
 										while($row = mysqli_fetch_array($result)) 
 										{
 											$name = $row['name'];
@@ -64,9 +81,11 @@ th {border-bottom: 1px solid black;}
 												echo "<tr><td width = 1000>$name</td><td width = 1000>$developer</td><td width = 800>$platform</td><td width = 500>$genre</td>
 												<td width = 500>$rating</td><td width = 500>$ign_score</td><td width = 500><a href='favorite.php?game=$gameid'><img src='starempty.png'></a></td></tr>\n";
 											}
+											
 										}
+											?></tbody></table><?php
 										}else{
-											echo "<table id=\"hor-minimalist-b\">\n<tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th></tr>\n\n";
+											echo "<table id=\"hor-minimalist-b\" class=\"tablesorter\"><thead><tr><th>Game Name</th><th>Developer</th><th>Platform</th><th>Genre</th><th>Rating</th><th>IGN Score</th></tr></thead><tbody>";
 											echo "";
 											while($row = mysqli_fetch_array($result)){
 												$name = $row['name'];
@@ -76,10 +95,11 @@ th {border-bottom: 1px solid black;}
 												$rating = $row['rating'];
 												$ign_score = $row['ign_score'];
 												echo "<tr><td width = 1000>$name</td><td width = 1000>$developer</td><td width = 800>$platform</td><td width = 500>$genre</td>
-													<td width = 500>$rating</td><td width = 500>$ign_score</td></tr>\n";
+													<td width = 500>$rating</td><td width = 500>$ign_score</td></tr>";
 											}
+										echo "</tbody></table>";
 										}
-										echo "</table>\n"; 
+
 									}
 								?>
 								</form>
