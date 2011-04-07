@@ -42,6 +42,8 @@ echo "<p><font size=3 color=grey>Search for games based on title, platform, genr
 							</SELECT>
 							<br>
 							</form>
+							<a href='advsearch.php'>
+							Specific Search </a>
 							</div>
 						</div>
 					</div>
