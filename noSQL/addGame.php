@@ -27,15 +27,6 @@ session_start();
 								<option value="WII">Wii</option>
 								<option value="PC">PC</option>
 								</select>
-								ESRB Rating: <select name="rating">
-								<option value=NULL> </option>
-								<option value="AO">AO</option>
-								<option value="M">M</option>
-								<option value="T">T</option>
-								<option value="E">E</option>
-								<option value="E10">E 10+</option>
-								<option value="EC">EC</option>
-								</select>
 								<br>
 								Genre: <select name="genre">
 								<option value=NULL> </option>
@@ -48,10 +39,7 @@ session_start();
 								<option value="Platform">Platform</option>
 								<option value="Horror">Horror</option>
 								</select><br>
-								Single Player:<input type="checkbox" name="singleplayer" value="1"><br>
-								Multi-Player:<input type="checkbox" name="multiplayer" value="1"><br>
 								IGN Score:<input type="text" name="ignscore" id="ignscore"/><br>
-								Your Score:<input type="text" name="userscore" id="userscore"/><br>
 								<input type="submit" value=submit>
 								</form>
 							</div>	

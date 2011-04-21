@@ -6,22 +6,25 @@ $username = $_POST['user'];
 $pw = $_POST['pass'];
 
 $found = false;
-$pfound = true;
+$pfound = false;
 
 $all_docs=$client->getAllDocs();
 foreach ( $all_docs->rows as $row)
 {
-	//echo "Username: " . $row->_id . "<br />";
-	//echo "Password: " . $row->password . "<br />";
-	if($username == $row->_id){
+	$doc = $client->getDoc($row->id);
+	//echo "Username: " . $doc->_id . "<br />";
+	//echo "Password: " . $doc->password . "<br />";
+	
+	if($username == $doc->_id){
 		$found = true;
 	}
-	if($password == $row->password){
+	if($password == $doc->password){
 		$pfound = true;
 	}
 }
-if(!$found && $pfound){
+if($found && $pfound){
   $_SESSION['username'] = $username;
+  echo "this was correct!";
   include "home.php";
 }else{
     include "login.php";
